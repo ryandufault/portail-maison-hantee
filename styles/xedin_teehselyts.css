@@ -1,0 +1,370 @@
+:root {
+  --white: #fff;
+}
+
+.ydob {
+  transform: rotate(180deg);
+  transform-origin: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: crosshair
+}
+
+@font-face {
+  src: url("../fonts/platypi.ttf") format("truetype");
+  font-family: platypi;
+}
+
+body {
+  height: 100vh;
+  background-color: black;
+}
+
+.bg {
+  height: 100vh;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-image: url(../img/hauntedhouse2.jpg);
+  filter: blur(4px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -3;
+  transition-property: background-image;
+  transition-duration: 1s;
+}
+
+
+.noise {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/noise.svg);
+  mix-blend-mode: color-burn;
+  z-index: -1;
+  animation-name: noise;
+  animation-duration: 0.2s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(2);
+}
+
+@keyframes noise {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.logo {
+  width: 50%;
+  height: 20%;
+  transition-property: filter;
+  transition-duration: 0.22s;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
+  transition-property: filter;
+  transition-duration: 0.22s;
+}
+
+
+
+.logo:active {
+  filter: drop-shadow(2px 2px 1.15rem rgb(0, 255, 221)) blur(0.1rem);
+  transition-property: filter;
+  transition-duration: 0.22s;
+}
+
+.wrapperporte {
+  transform: scale(0.2);
+  filter: invert(100%)
+}
+
+.animation-porte {
+  width: 256px;
+  height: 560px;
+  white-space: nowrap;
+  overflow: hidden;
+  background-image: url(../img/portes/animporte.png);
+  transition-property: filter;
+  transition-duration: 0.22s;
+
+}
+
+@keyframes ouvre {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 0 -1680px;
+  }
+}
+
+
+.animation-porte:hover {
+  animation-name: ouvre;
+  animation-duration: 0.2s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-timing-function: steps(3);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: drop-shadow(0 0 1.75rem rgb(255, 255, 255, 0.5));
+  transition-property: filter;
+  transition-duration: 0.22s;
+
+}
+
+
+.animation-porte:active {
+  filter: drop-shadow(0 0 1.75rem rgb(0, 255, 221)) invert(100%);
+  transition-property: filter;
+  transition-duration: 0.1s;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  justify-self: center;
+}
+
+.index-wrapper {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 1fr;
+}
+
+.logoghost {
+  width: 23vw;
+  height: auto;
+  filter: blur(10px) invert(100%);
+  opacity: 68%;
+  z-index: -1;
+  transition-property: opacity;
+  transition-duration: 1s;
+  grid-row: 1;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+}
+
+.logoindex-container {
+  grid-row: 1;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+  position: relative;
+}
+
+.logo_index {
+  position: absolute;
+  /* Position the logo on top of the grid cell */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 13vw;
+  height: auto;
+  opacity: 98%;
+  filter: invert(100%);
+  mix-blend-mode: difference;
+  transition-property: filter, mix-blend-mode, transform, left, opacity;
+  transition-duration: 0.22s;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.logo_index:hover {
+  filter: invert(100%) drop-shadow(0 0 0.75rem var(--white));
+  transition-property: filter, mix-blend-mode, transform;
+  transition-duration: 0.22s;
+}
+
+.logo_index:active {
+
+  filter: invert(100%) drop-shadow(2px 2px 1.15rem rgb(255, 0, 0)) blur(0.2rem);
+  mix-blend-mode: exclusion;
+  transition-property: filter, mix-blend-mode, transform;
+  transition-duration: 0.22s;
+}
+
+.wrapperindexdoors {
+  display: flex;
+  justify-content: end;
+  align-self: center;
+  grid-row: 1;
+  grid-column: 2;
+  filter: invert(100%);
+  mix-blend-mode: difference;
+  transition-property: margin;
+  transition-duration: 1s;
+
+}
+
+.wrapperporte {
+  display: block;
+}
+
+.wrapperporte a {
+  display: block;
+  line-height: 0;
+}
+
+.wrapperporte img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#porte1 {
+  transform: scale(300%);
+}
+
+#porte2 {
+  transform: scale(300%);
+}
+
+#porte3 {
+  transform: scale(300%);
+}
+
+a {
+  display: block;
+  width: fit-content;
+}
+
+p {
+  font-family: platypi;
+  color: var(--white);
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  text-transform: uppercase;
+  overflow: hidden;
+  white-space: nowrap;
+  transition-property: filter;
+  transition-duration: 1s;
+  animation-name: blurflicker;
+  animation-duration: 0.2s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes blurflicker {
+  from {
+    filter: blur(0px);
+  }
+
+  to {
+    filter: blur(1.2px);
+  }
+}
+
+@media (max-width: 1500px) {
+  .bg {
+    background-image: url(../img/hauntedhouse3.jpg);
+    transition-property: background-image, filter;
+    transition-duration: 1s;
+  }
+
+  .logo_index {
+    transition-property: left, opacity;
+    transition-duration: 1s;
+  }
+
+  .logoghost {
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 1s;
+  }
+
+  #porte1 {}
+
+  #porte2 {}
+
+  #porte3 {}
+
+  p {
+    font-family: platypi;
+    color: var(--white);
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    text-transform: uppercase;
+    overflow: hidden;
+    white-space: nowrap;
+    filter: blur(3px);
+    transition-property: filter, opacity;
+    transition-duration: 1s;
+  }
+}
+
+
+
+
+@media (max-width: 1000px) {
+  .bg {
+    background-image: url(../img/hauntedhouse3.jpg);
+    filter: invert(100%);
+    transition-property: background-image, filter;
+    transition-duration: 1s;
+  }
+
+  nav {
+    opacity: 0%;
+    transition-property: opacity;
+    transition-duration: 1s;
+  }
+
+  .logo_index {
+    opacity: 0%;
+    transition-property: left, opacity, filter;
+    transition-duration: 1s;
+  }
+
+  .logoghost {
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 1s;
+  }
+
+  #porte1 {}
+
+  #porte2 {}
+
+  #porte3 {}
+
+  p {
+    font-family: platypi;
+    color: var(--white);
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    text-transform: uppercase;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0%;
+    transition-property: filter, opacity;
+    transition-duration: 1s;
+  }
+}
