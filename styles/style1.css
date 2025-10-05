@@ -1,9 +1,11 @@
-:root{
-  --white : #fff;
+:root {
+  --white: #fff;
 }
 
 * {
-    margin: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @font-face {
@@ -12,10 +14,10 @@
 }
 
 body {
-    height: 100vh;
-    width: 100vh;
-    background-color: #3b2929;
-  }
+  height: 100vh;
+  width: 100vh;
+  background-color: #3b2929;
+}
 
 .bg {
   height: 100vh;
@@ -24,7 +26,7 @@ body {
   position: fixed;
   background-image: url(../img/bibliolarge.jpg);
   filter: blur(2px);
-  background-size: cover; 
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   z-index: -3;
@@ -35,11 +37,11 @@ body {
 
 .noise {
   position: fixed;
-  width:100%;
+  width: 100%;
   height: 100%;
   background-image: url(../img/noise.svg);
   mix-blend-mode: color-burn;
-  z-index: -1;  
+  z-index: -1;
   animation-name: noise;
   animation-duration: 0.2s;
   animation-delay: 0s;
@@ -48,8 +50,13 @@ body {
 }
 
 @keyframes noise {
-  from { transform:rotate(360deg); }
-  to {  transform:rotate(0deg); }
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
 }
 
 nav {
@@ -60,55 +67,56 @@ nav {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 100%; 
-  background-color: rgba(255, 255, 255, 0.5); 
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
   filter: blur(3);
-  padding: 20px 0px; 
+  padding: 20px 0px;
   filter: invert(100%);
   z-index: 4;
- }
+}
 
- .navbg {
+.navbg {
   position: fixed;
   top: 0;
   height: 13vh;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 100%; 
-  background-color: rgba(0, 0, 0, 0.5); 
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   filter: blur(3);
-  padding: 20px 0px; 
+  padding: 20px 0px;
   filter: invert(100%) blur(20px);
   z-index: -1;
- }
+}
 
- .logonav {
+.logonav {
 
   width: 50%;
   height: 20%;
   transition-property: filter;
   transition-duration: 0.22s;
- }
+}
 
- .logonav:hover {
+.logonav:hover {
   filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
   transition-property: filter;
   transition-duration: 0.22s;
- }
+}
 
- .logonav:active {
+.logonav:active {
   filter: drop-shadow(2px 2px 1.15rem rgb(0, 255, 221)) blur(0.1rem);
   transition-property: filter;
   transition-duration: 0.22s;
- }
+}
+
 .wrapperporte {
-  transform:scale(0.2);
-  filter:invert(100%)
+  transform: scale(0.2);
+  filter: invert(100%)
 }
 
 
- .animation-porte {
+.animation-porte {
   width: 256px;
   height: 560px;
   background-image: url(../img/portes/animporte.png);
@@ -117,27 +125,33 @@ nav {
   white-space: nowrap;
   overflow: hidden;
 
- }
+}
 
 .animation-porte::before {
   content: "";
-  padding-top: 100%; /* Aspect ratio 1:1 (par exemple) */
+  padding-top: 100%;
+  /* Aspect ratio 1:1 (par exemple) */
   display: block;
 }
 
- @keyframes ouvre {
-  from { background-position: 0 0; }
-  to { background-position: 0 -1680px; }
+@keyframes ouvre {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 0 -1680px;
+  }
 }
 
- 
- .animation-porte:hover {
+
+.animation-porte:hover {
   animation-name: ouvre;
   animation-duration: 0.2s;
   animation-delay: 0s;
   animation-iteration-count: 1;
   animation-timing-function: steps(3);
-  background-size: cover; 
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   filter: drop-shadow(0 0 0.75rem rgb(255, 255, 255));
@@ -145,19 +159,19 @@ nav {
   transition-duration: 0.22s;
 }
 
- 
- .animation-porte:active {
+
+.animation-porte:active {
   filter: drop-shadow(0 0 1.75rem rgb(0, 255, 221)) invert(100%);
   transition-property: filter;
   transition-duration: 0.1s;
- }
+}
 
- .livre  {
+.livre {
 
   position: fixed;
   top: 50%;
   left: 50%;
-  background-image: url("../img/livre1.png");
+  background-image: url("../img/livre1.webp");
   transform: translate(-50%, -50%) scale(0.08, 0.1);
   opacity: 88%;
   filter: drop-shadow(0 0 66.75rem rgb(139, 77, 77));
@@ -171,9 +185,14 @@ nav {
   transition-duration: 1.22s;
 }
 
-@keyframes haut { 
-  from { top: 49% } 
-  to { top: 52% }  
+@keyframes haut {
+  from {
+    top: 49%
+  }
+
+  to {
+    top: 52%
+  }
 }
 
 .livre:hover {
@@ -181,9 +200,9 @@ nav {
   position: fixed;
   top: 50%;
   left: 50%;
-  background-image: url("../img/livre2_2.png");
+  background-image: url("../img/livre2_2.webp");
 
-  transform: translate(-50%, -50%) scale(0.09 ,0.11);
+  transform: translate(-50%, -50%) scale(0.09, 0.11);
 
   opacity: 100%;
   filter: drop-shadow(0 0 116.75rem rgb(0, 0, 0));
@@ -195,7 +214,7 @@ nav {
   animation-direction: alternate;
   animation-play-state: paused;
   animation-timing-function: steps(7);
-  
+
 }
 
 .livre:active {
@@ -223,28 +242,28 @@ nav {
 
 @media (max-width: 1000px) {
   .bg {
-    filter:contrast(140%) hue-rotate(180deg);
+    filter: contrast(140%) hue-rotate(180deg);
     transition-property: filter;
     transition-duration: 1s;
   }
 
 
-   .livre {
+  .livre {
     transform: translate(-50%, -50%) scale(0.03, 0.04);
 
     filter: hue-rotate(140deg);
     transition-property: filter, transform;
     transition-duration: 0.12s;
-   }
+  }
 
-   .livre:hover {
-    transform: translate(-50%, -50%) scale(0.04 ,0.05);
+  .livre:hover {
+    transform: translate(-50%, -50%) scale(0.04, 0.05);
     filter: contrast(120%) invert(100%);
     transition-property: filter, transform;
     transition-duration: 0.12s;
-   }
+  }
 
-   .livre:active {
+  .livre:active {
     content: url("../img/eyegif.gif");
     position: fixed;
     top: 50%;
@@ -252,7 +271,7 @@ nav {
     background-image: url("../img/eyegif.gif");
     background-size: cover;
     filter: invert(100%);
-  
+
     transform: translate(-50%, -50%) scale(2.6);
     transform-origin: center;
     opacity: 108%;
@@ -266,9 +285,9 @@ nav {
     animation-play-state: paused;
     animation-timing-function: steps(7);
     z-index: 5;
-   }
+  }
 
-   .animation-porte {
+  .animation-porte {
     left: 50%;
     transform: translate(-50%, 0%);
     content: url("../img/eyestrans2.webp");
@@ -277,7 +296,7 @@ nav {
     height: auto;
     transition-property: filter;
     transition-duration: 0.22s;
-   }
+  }
 
-   
+
 }

@@ -1,9 +1,11 @@
-:root{
-  --white : #fff;
+:root {
+  --white: #fff;
 }
 
 * {
-    margin: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @font-face {
@@ -12,9 +14,9 @@
 }
 
 body {
-    height: 100vh;
-    width: 100vh;
-  }
+  height: 100vh;
+  width: 100vh;
+}
 
 
 
@@ -25,7 +27,7 @@ body {
   position: fixed;
   background-image: url(../img/bggrenier.jpg);
   filter: blur(1px);
-  background-size: cover; 
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
   z-index: -3;
@@ -34,11 +36,11 @@ body {
 
 .noise {
   position: fixed;
-  width:100%;
+  width: 100%;
   height: 100%;
   background-image: url(../img/noise.svg);
   mix-blend-mode: color-burn;
-  z-index: -2;  
+  z-index: -2;
   animation-name: noise;
   animation-duration: 0.2s;
   animation-delay: 0s;
@@ -47,8 +49,13 @@ body {
 }
 
 @keyframes noise {
-  from { transform:rotate(360deg); }
-  to {  transform:rotate(0deg); }
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
 }
 
 nav {
@@ -59,55 +66,56 @@ nav {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 100%; 
-  background-color: rgba(255, 255, 255, 0.5); 
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
   filter: blur(3);
-  padding: 20px 0px; 
+  padding: 20px 0px;
   filter: invert(100%);
   z-index: 4;
   white-space: nowrap;
   overflow: hidden;
- }
+}
 
- .navbg {
+.navbg {
   position: fixed;
   top: 0;
   height: 13vh;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 100%; 
-  background-color: rgba(0, 0, 0, 0.5); 
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   filter: blur(3);
-  padding: 20px 0px; 
+  padding: 20px 0px;
   filter: invert(100%) blur(20px);
   z-index: -1;
   white-space: nowrap;
   overflow: hidden;
- }
+}
 
- .logonav {
+.logonav {
 
   width: 50%;
   height: 20%;
   transition-property: filter;
   transition-duration: 0.22s;
- }
+}
 
- .logonav:hover {
+.logonav:hover {
   filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
   transition-property: filter;
   transition-duration: 0.22s;
- }
+}
 
- .logonav:active {
+.logonav:active {
   filter: drop-shadow(2px 2px 1.15rem rgb(0, 255, 221)) blur(0.1rem);
   transition-property: filter;
   transition-duration: 0.22s;
- }
+}
+
 .wrapperporte {
-  transform:scale(0.2);
-  filter:invert(100%);
+  transform: scale(0.2);
+  filter: invert(100%);
   white-space: nowrap;
   overflow: hidden;
 }
@@ -116,7 +124,7 @@ nav {
   content: "1";
 }
 
- .animation-porte {
+.animation-porte {
   width: 256px;
   height: 560px;
   background-image: url(../img/portes/animporte.png);
@@ -125,21 +133,26 @@ nav {
   white-space: nowrap;
   overflow: hidden;
 
- }
-
- @keyframes ouvre {
-  from { background-position: 0 0; }
-  to { background-position: 0 -1680px; }
 }
 
- 
- .animation-porte:hover {
+@keyframes ouvre {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 0 -1680px;
+  }
+}
+
+
+.animation-porte:hover {
   animation-name: ouvre;
   animation-duration: 0.2s;
   animation-delay: 0s;
   animation-iteration-count: 1;
   animation-timing-function: steps(3);
-  background-size: cover; 
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   filter: drop-shadow(0 0 0.75rem rgb(255, 255, 255));
@@ -147,14 +160,14 @@ nav {
   transition-duration: 0.22s;
 }
 
- 
- .animation-porte:active {
+
+.animation-porte:active {
   filter: drop-shadow(0 0 1.75rem rgb(0, 255, 221)) invert(100%);
   transition-property: filter;
   transition-duration: 0.1s;
- }
+}
 
- .grenier  {
+.grenier {
 
   position: fixed;
   top: 50%;
@@ -173,7 +186,7 @@ nav {
   transition-duration: 1.22s;
 }
 
-.grenier:hover  {
+.grenier:hover {
   filter: contrast(220%);
   position: fixed;
   top: 50%;
@@ -192,7 +205,7 @@ nav {
   transition-duration: 1.22s;
 }
 
-.grenier:active  {
+.grenier:active {
   content: url("../img/grenier3.jpg");
   filter: contrast(220%);
   position: fixed;
@@ -213,14 +226,24 @@ nav {
 }
 
 
-@keyframes lat { 
-  from { left: 50% } 
-  to { left: 51% }  
+@keyframes lat {
+  from {
+    left: 50%
+  }
+
+  to {
+    left: 51%
+  }
 }
 
-@keyframes bouh { 
-  from { top: 0% } 
-  to { top: 50% }  
+@keyframes bouh {
+  from {
+    top: 0%
+  }
+
+  to {
+    top: 50%
+  }
 }
 
 @media (max-width: 1000px) {
@@ -251,7 +274,7 @@ nav {
     transform: translate(-64%, -50%) scale(1.1);
   }
 
-  .grenier:active  {
+  .grenier:active {
     content: url("../img/grenier3.jpg");
     filter: contrast(220%);
     position: fixed;
