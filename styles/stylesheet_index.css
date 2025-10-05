@@ -2,6 +2,14 @@
   --white: #fff;
 }
 
+/* .body-upside-down {
+  transform: rotate(180deg);
+  transform-origin: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+} */
+
 * {
   margin: 0;
   padding: 0;
@@ -139,7 +147,7 @@ body {
 .index-wrapper {
   margin: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 40% 60%;
   grid-template-rows: 1fr;
 }
 
@@ -207,6 +215,38 @@ body {
   transition-property: margin;
   transition-duration: 1s;
 
+}
+
+.wrapperporte {
+  display: block;
+}
+
+.wrapperporte a {
+  display: block;
+  line-height: 0;
+}
+
+.wrapperporte img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#porte1 {
+  transform: scale(300%);
+}
+
+#porte2 {
+  transform: scale(300%);
+}
+
+#porte3 {
+  transform: scale(300%);
+}
+
+a {
+  display: block;
+  width: fit-content;
 }
 
 p {
