@@ -1,0 +1,346 @@
+:root{
+  --white : #fff;
+}
+
+* {
+    margin: 0;
+}
+
+@font-face {
+  src: url("../fonts/platypi.ttf") format("truetype");
+  font-family: platypi;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+  }
+
+#bg {
+  position: fixed;
+  width: 2560px;
+  height: 980px;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  filter: blur(2px);
+
+  z-index: -3;
+}
+
+.noise {
+  position: fixed;
+  width:100%;
+  height: 100%;
+  background-image: url(../img/noise.svg);
+  mix-blend-mode: color-burn;
+  z-index: -2;  
+  animation-name: noise;
+  animation-duration: 0.2s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(2);
+}
+
+@keyframes noise {
+  from { transform:rotate(360deg); }
+  to {  transform:rotate(0deg); }
+}
+
+nav {
+
+  position: fixed;
+  top: 0;
+  height: 10vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%; 
+  background-color: rgba(255, 255, 255, 0.5); 
+  filter: blur(3);
+  padding: 20px 0px; 
+  filter: invert(100%);
+  z-index: 4;
+ }
+
+ .navbg {
+  position: fixed;
+  top: 0;
+  height: 13vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%; 
+  background-color: rgba(0, 0, 0, 0.5); 
+  filter: blur(3);
+  padding: 20px 0px; 
+  filter: invert(100%) blur(20px);
+  z-index: -1;
+ }
+
+ .logonav {
+
+  width: 50%;
+  height: 20%;
+  transition-property: filter;
+  transition-duration: 0.22s;
+ }
+
+ .logonav:hover {
+  filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
+  transition-property: filter;
+  transition-duration: 0.22s;
+ }
+
+ .logonav:active {
+  filter: drop-shadow(2px 2px 1.15rem rgb(0, 255, 221)) blur(0.1rem);
+  transition-property: filter;
+  transition-duration: 0.22s;
+ }
+.wrapperporte {
+  transform:scale(0.2);
+  filter:invert(100%)
+}
+
+.animation-porte:nth-child(1)::after {
+  content: "1";
+}
+
+ .animation-porte {
+  width: 256px;
+  height: 560px;
+  background-image: url(../img/portes/animporte.png);
+  white-space: nowrap;
+  overflow: hidden;
+  transition-property: filter;
+  transition-duration: 0.22s;
+
+ }
+
+ @keyframes ouvre {
+  from { background-position: 0 0; }
+  to { background-position: 0 -1680px; }
+}
+
+ 
+ .animation-porte:hover {
+  animation-name: ouvre;
+  animation-duration: 0.2s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-timing-function: steps(3);
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: drop-shadow(0 0 0.75rem rgb(255, 255, 255));
+  transition-property: filter;
+  transition-duration: 0.22s;
+}
+
+ 
+ .animation-porte:active {
+  filter: drop-shadow(0 0 1.75rem rgb(0, 255, 221)) invert(100%);
+  transition-property: filter;
+  transition-duration: 0.1s;
+ }
+
+ .cadre  { 
+  opacity: 00%;
+  position: fixed;
+  transform: scale(0.2, 0.4);
+  left: 1335px;
+  top: 285px;
+
+  cursor: pointer;
+ }
+
+ .cadre:hover  { 
+  opacity: 40%;
+  position: fixed;
+  transform: scale(0.2, 0.4);
+  left: 1335px;
+  top: 285px;
+  cursor: pointer;
+ }
+
+ .cadre:active  { 
+  content: url("../img/cadre_l.jpg");
+  width: 100%;
+  opacity: 100%;
+  position: fixed;
+  left: 0%;
+  top: 5%;
+  transform: scale(1.3);
+  z-index: 5;
+  animation-name: haut;
+  animation-duration: 0.1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: running;
+  animation-timing-function: steps(7);
+ }
+
+ .cadre  { 
+  opacity: 100%;
+  position: auto;
+  transform: scale(0.2, 0.4);
+  left: 1335px;
+  top: 285px;
+  filter: invert(100%), blur(40px);
+
+  cursor: pointer;
+ }
+ 
+ .spiderwrapper {
+  overflow: hidden;
+}
+
+ .araigrosse {
+  position: relative;
+  transform: scale(4);
+  filter: drop-shadow(0px 0px 10px #4d3d3d) blur(1px);
+  animation-name: grosse;
+  animation-duration: 8.2s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(59);
+
+  overflow: hidden;
+  z-index: 6;
+ }
+
+.araigrosse:hover {
+  content: url("../img/spiderpetite.webp");
+  filter: invert(100%);
+  overflow: hidden;
+}
+
+
+ @keyframes grosse {
+  from { transform: scale(3) translate(1200px, 200px); }
+  to {  transform: scale(3) translate(-200px, -200px); }
+}
+
+@keyframes haut { 
+  from { top: 4% } 
+  to { top: 5% }  
+}
+
+@media (max-width: 1700px) {
+  /*.bg {
+    filter:grayscale(40%) contrast(380%) hue-rotate(320deg) ;
+    transition-property: filter;
+    transition-duration: 1s;
+  }*/
+
+
+  .bg {
+    filter:contrast(120%) ;
+    transition-property: filter;
+    transition-duration: 1s;
+  }
+
+  #bg {
+    position: fixed;
+    width: 2560px;
+    height: 980px;
+  }
+   
+  .cadre  { 
+    opacity: 50%;
+    position: fixed;
+    transform: scale(0.2, 0.4);
+    left: -60px;
+    top: 285px;
+    filter:contrast(120%) ;
+    cursor: pointer;
+   }
+  
+   .cadre:hover  { 
+    opacity: 40%;
+    position: fixed;
+    transform: scale(0.2, 0.4);
+    left: -60px;
+    top: 285px;
+    cursor: pointer;
+   }
+
+   .cadre:active  { 
+    content: url("../img/cadre_l.jpg");
+    width: 100%;
+    height: 100%;
+    opacity: 100%;
+    position: fixed;
+    left: 0%;
+    top: 5%;
+    transform: scale(1.3);
+    z-index: 5;
+    animation-name: haut;
+    animation-duration: 0.1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+    animation-timing-function: steps(7);
+   }
+
+}
+
+@media (max-width: 1000px) {
+  .bg {
+    filter:grayscale(40%) contrast(380%) hue-rotate(320deg) ;
+    transition-property: filter;
+    transition-duration: 1s;
+  }
+
+
+  #bg {
+    position: fixed;
+    width: 2560px;
+    height: 980px;
+  }
+   
+  .cadre  { 
+    opacity: 50%;
+    position: fixed;
+    transform: scale(0.2, 0.4);
+    left: -60px;
+    top: 285px;
+    filter:contrast(240%);
+    cursor: pointer;
+   }
+  
+   .cadre:hover  { 
+    opacity: 40%;
+    position: fixed;
+    transform: scale(0.2, 0.4);
+    left: -60px;
+    top: 285px;
+    cursor: pointer;
+    filter:contrast(240%) brightness(150%);
+   }
+
+   .cadre:active  { 
+    content: url("../img/cadre_l.jpg");
+    width: 100%;
+    height: 100%;
+    opacity: 100%;
+    position: fixed;
+    left: 0%;
+    top: 5%;
+    transform: scale(2.3) rotate(180deg);
+    z-index: 5;
+    animation-name: haut;
+    animation-duration: 0.01s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+    animation-timing-function: steps(7);
+   }
+
+   .araigrosse {
+    display:none;
+   }
+}

@@ -1,0 +1,273 @@
+:root{
+  --white : #fff;
+}
+
+* {
+    margin: 0;
+}
+
+@font-face {
+  src: url("../fonts/platypi.ttf") format("truetype");
+  font-family: platypi;
+}
+
+body {
+    height: 100vh;
+    width: 100vh;
+  }
+
+
+
+.bg1 {
+  height: 100vh;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-image: url(../img/bggrenier.jpg);
+  filter: blur(1px);
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: bottom;
+  z-index: -3;
+}
+
+
+.noise {
+  position: fixed;
+  width:100%;
+  height: 100%;
+  background-image: url(../img/noise.svg);
+  mix-blend-mode: color-burn;
+  z-index: -2;  
+  animation-name: noise;
+  animation-duration: 0.2s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(2);
+}
+
+@keyframes noise {
+  from { transform:rotate(360deg); }
+  to {  transform:rotate(0deg); }
+}
+
+nav {
+
+  position: fixed;
+  top: 0;
+  height: 10vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%; 
+  background-color: rgba(255, 255, 255, 0.5); 
+  filter: blur(3);
+  padding: 20px 0px; 
+  filter: invert(100%);
+  z-index: 4;
+  white-space: nowrap;
+  overflow: hidden;
+ }
+
+ .navbg {
+  position: fixed;
+  top: 0;
+  height: 13vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%; 
+  background-color: rgba(0, 0, 0, 0.5); 
+  filter: blur(3);
+  padding: 20px 0px; 
+  filter: invert(100%) blur(20px);
+  z-index: -1;
+  white-space: nowrap;
+  overflow: hidden;
+ }
+
+ .logonav {
+
+  width: 50%;
+  height: 20%;
+  transition-property: filter;
+  transition-duration: 0.22s;
+ }
+
+ .logonav:hover {
+  filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
+  transition-property: filter;
+  transition-duration: 0.22s;
+ }
+
+ .logonav:active {
+  filter: drop-shadow(2px 2px 1.15rem rgb(0, 255, 221)) blur(0.1rem);
+  transition-property: filter;
+  transition-duration: 0.22s;
+ }
+.wrapperporte {
+  transform:scale(0.2);
+  filter:invert(100%);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.animation-porte:nth-child(1)::after {
+  content: "1";
+}
+
+ .animation-porte {
+  width: 256px;
+  height: 560px;
+  background-image: url(../img/portes/animporte.png);
+  transition-property: filter;
+  transition-duration: 0.22s;
+  white-space: nowrap;
+  overflow: hidden;
+
+ }
+
+ @keyframes ouvre {
+  from { background-position: 0 0; }
+  to { background-position: 0 -1680px; }
+}
+
+ 
+ .animation-porte:hover {
+  animation-name: ouvre;
+  animation-duration: 0.2s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-timing-function: steps(3);
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: drop-shadow(0 0 0.75rem rgb(255, 255, 255));
+  transition-property: filter;
+  transition-duration: 0.22s;
+}
+
+ 
+ .animation-porte:active {
+  filter: drop-shadow(0 0 1.75rem rgb(0, 255, 221)) invert(100%);
+  transition-property: filter;
+  transition-duration: 0.1s;
+ }
+
+ .grenier  {
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-image: url("../img/grenier1.jpg");
+  transform: translate(-50%, -50%);
+  opacity: 88%;
+  filter: drop-shadow(0 0 66.75rem rgb(139, 77, 77));
+  animation-name: lat;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: running;
+  animation-timing-function: steps(17);
+  transition-property: filter, background-image, transform;
+  transition-duration: 1.22s;
+}
+
+.grenier:hover  {
+  filter: contrast(220%);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-image: url("../img/grenier2.webp");
+  transform: translate(-50%, -50%) scale(1.1);
+  opacity: 88%;
+  filter: drop-shadow(0 0 66.75rem rgb(139, 77, 77));
+  animation-name: lat;
+  animation-duration: 0.2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: running;
+  animation-timing-function: steps(17);
+  transition-property: filter, background-image, transform;
+  transition-duration: 1.22s;
+}
+
+.grenier:active  {
+  content: url("../img/grenier3.jpg");
+  filter: contrast(220%);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(2);
+  opacity: 100%;
+  filter: drop-shadow(10 10 66.75rem rgb(0, 0, 0));
+  animation-name: bouh;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-play-state: running;
+  animation-timing-function: ease-out;
+  transition-property: filter, background-image;
+  transition-duration: 1.22s;
+  z-index: 6;
+}
+
+
+@keyframes lat { 
+  from { left: 50% } 
+  to { left: 51% }  
+}
+
+@keyframes bouh { 
+  from { top: 0% } 
+  to { top: 50% }  
+}
+
+@media (max-width: 1000px) {
+  body {
+    filter: invert(100%) contrast(150%) grayscale(78%) blur(1px);
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    filter: invert(100%) contrast(250%) grayscale(100%) blur(5px);
+  }
+
+  .grenier {
+    position: fixed;
+    top: 50%;
+    left: 10%;
+    background-image: url("../img/grenier1.jpg");
+    transform: translate(-64%, -50%);
+  }
+
+  .grenier:hover {
+    filter: contrast(220%);
+    position: fixed;
+    top: 50%;
+    left: 10%;
+    background-image: url("../img/grenier2.webp");
+    transform: translate(-64%, -50%) scale(1.1);
+  }
+
+  .grenier:active  {
+    content: url("../img/grenier3.jpg");
+    filter: contrast(220%);
+    position: fixed;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 100%;
+    filter: drop-shadow(10 10 66.75rem rgb(0, 0, 0));
+    animation-name: bouh;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-play-state: running;
+    animation-timing-function: ease-out;
+    transition-property: filter, background-image;
+    transition-duration: 1.22s;
+    z-index: 6;
+  }
+}
