@@ -59,41 +59,7 @@ body {
   }
 }
 
-nav {
-
-  position: fixed;
-  top: 0;
-  height: 10vh;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
-  filter: blur(3);
-  padding: 20px 0px;
-  filter: invert(100%);
-  z-index: 4;
-  transition-property: opacity;
-  transition-duration: 1s;
-}
-
-.navbg {
-  position: fixed;
-  top: 0;
-  height: 13vh;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  filter: blur(3);
-  padding: 20px 0px;
-  filter: invert(100%) blur(20px);
-  z-index: -1;
-}
-
 .logo {
-
   width: 50%;
   height: 20%;
   transition-property: filter;
@@ -118,8 +84,6 @@ nav {
   transform: scale(0.2);
   filter: invert(100%)
 }
-
-
 
 .animation-porte {
   width: 256px;
@@ -165,44 +129,57 @@ nav {
   transition-duration: 0.1s;
 }
 
-.wrapperindexdoors {
-  filter: invert(100%);
-  mix-blend-mode: difference;
-  margin: 0px 120px;
-  transition-property: margin;
-  transition-duration: 1s;
+.wrapper {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  justify-self: center;
+}
+
+.index-wrapper {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
 }
 
 .logoghost {
-
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 0%) scale(1.4);
-  width: 15%;
-  height: 100%;
-  margin-left: -450px;
+  width: 23vw;
+  height: auto;
   filter: blur(10px) invert(100%);
   opacity: 68%;
   z-index: -1;
   transition-property: opacity;
   transition-duration: 1s;
+  grid-row: 1;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+}
+
+.logoindex-container {
+  grid-row: 1;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+  position: relative;
 }
 
 .logo_index {
-  opacity: 98%;
-  position: fixed;
+  position: absolute;
+  /* Position the logo on top of the grid cell */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 15%;
-  height: 100%;
-  margin-left: -450px;
+  width: 13vw;
+  height: auto;
+  opacity: 98%;
   filter: invert(100%);
   mix-blend-mode: difference;
   transition-property: filter, mix-blend-mode, transform, left, opacity;
   transition-duration: 0.22s;
-
+  grid-row: 1;
+  grid-column: 1;
 }
 
 .logo_index:hover {
@@ -219,31 +196,17 @@ nav {
   transition-duration: 0.22s;
 }
 
-#porte1 {
-  position: fixed;
-  top: 2125px;
-  left: 50%;
-  transform: scale(4);
-  transition-property: transform, left, top;
+.wrapperindexdoors {
+  display: flex;
+  justify-content: end;
+  align-self: center;
+  grid-row: 1;
+  grid-column: 2;
+  filter: invert(100%);
+  mix-blend-mode: difference;
+  transition-property: margin;
   transition-duration: 1s;
-}
 
-#porte2 {
-  position: fixed;
-  top: 2125px;
-  left: 150%;
-  transform: scale(4);
-  transition-property: transform, left, top;
-  transition-duration: 1s;
-}
-
-#porte3 {
-  position: fixed;
-  top: 2125px;
-  left: 250%;
-  transform: scale(4);
-  transition-property: transform, left, top;
-  transition-duration: 1s;
 }
 
 p {
@@ -283,14 +246,7 @@ p {
   }
 
   .logo_index {
-    left: 55%;
     transition-property: left, opacity;
-    transition-duration: 1s;
-  }
-
-  .wrapperindexdoors {
-    margin: 0 -60px;
-    transition-property: margin;
     transition-duration: 1s;
   }
 
@@ -300,32 +256,11 @@ p {
     transition-duration: 1s;
   }
 
-  #porte1 {
-    position: fixed;
-    top: 2125px;
-    left: 0%;
-    transform: scale(3.6);
-    transition-property: transform, left, top;
-    transition-duration: 1s;
-  }
+  #porte1 {}
 
-  #porte2 {
-    position: fixed;
-    top: 2125px;
-    left: 100%;
-    transform: scale(3.6);
-    transition-property: transform, left, top;
-    transition-duration: 1s;
-  }
+  #porte2 {}
 
-  #porte3 {
-    position: fixed;
-    top: 2125px;
-    left: 200%;
-    transform: scale(3.6);
-    transition-property: transform, left, top;
-    transition-duration: 1s;
-  }
+  #porte3 {}
 
   p {
     font-family: platypi;
@@ -366,45 +301,17 @@ p {
     transition-duration: 1s;
   }
 
-  .wrapperindexdoors {
-    margin: 0 -60px;
-    transition-property: margin;
-    transition-duration: 1s;
-  }
-
   .logoghost {
     opacity: 0;
     transition-property: opacity;
     transition-duration: 1s;
   }
 
-  #porte1 {
-    position: fixed;
-    top: 2125px;
-    left: -50%;
-    transform: scale(3.6);
-    transition-property: transform, left, top;
-    transition-duration: 1s;
-  }
+  #porte1 {}
 
-  #porte2 {
-    position: fixed;
-    top: 2125px;
-    left: 50%;
-    transform: scale(3.6);
-    transition-property: transform, left, top;
-    transition-duration: 1s;
-  }
+  #porte2 {}
 
-  #porte3 {
-    position: fixed;
-    top: 2125px;
-    left: 150%;
-    transform: scale(3.6);
-    transition-property: transform, left, top;
-    transition-duration: 1s;
-
-  }
+  #porte3 {}
 
   p {
     font-family: platypi;
